@@ -1,11 +1,11 @@
 from esphome.components import output
 import esphome.codegen as cg
-import esphome.config_validation as cv  # ✅ This is required
+import esphome.config_validation as cv
 
 mp3player_ns = cg.esphome_ns.namespace("mp3player")
 MP3PlayerOutput = mp3player_ns.class_("MP3PlayerOutput", cg.Component, output.BinaryOutput)
 
-CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend({}).extend(cv.COMPONENT_SCHEMA)  # ✅ Use cv, not cg
+CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend({}).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
     var = cg.new_Pvariable(config[output.CONF_ID])
