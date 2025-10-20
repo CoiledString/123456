@@ -1,5 +1,5 @@
 from esphome.components import output
-import esphome.codegen as cg
+import esphome.codegen as cv
 
 mp3player_ns = cg.esphome_ns.namespace("mp3player")
 MP3PlayerOutput = mp3player_ns.class_("MP3PlayerOutput", cg.Component, output.BinaryOutput)
